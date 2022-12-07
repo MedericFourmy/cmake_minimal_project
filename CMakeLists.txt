@@ -1,0 +1,9 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+
+PROJECT(cmake_minimal_project)
+
+ADD_LIBRARY(ops src/operations.cpp)
+TARGET_INCLUDE_DIRECTORIES(ops PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+ADD_EXECUTABLE(main src/main.cpp)
+TARGET_LINK_LIBRARIES(main ops)
